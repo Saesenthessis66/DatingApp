@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { TimeagoModule } from 'ngx-timeago';
 import { Member } from 'src/app/_models/member';
 import { MembersService } from 'src/app/_services/members.service';
 
@@ -14,7 +15,8 @@ import { MembersService } from 'src/app/_services/members.service';
   imports:[
     CommonModule,
     TabsModule,
-    GalleryModule
+    GalleryModule,
+    TimeagoModule
   ]
 })
 export class MemberDetailComponent implements OnInit {
