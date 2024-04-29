@@ -1,0 +1,26 @@
+# fly.toml app configuration file generated for netdatingapp on 2024-04-29T21:22:05+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'netdatingapp'
+primary_region = 'waw'
+
+[build]
+  image = 'saesenthiss/datingapp:latest'
+
+[env]
+  ASPNETCORE_URLS="http://+:8080"
+  CloudinarySettings__CloudName="dyjxhfkpe"
+  CloudinarySettings__ApiKey="651186582339495"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  size = 'shared-cpu-1x'
